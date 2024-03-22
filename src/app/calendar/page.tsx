@@ -8,7 +8,7 @@ const Page: React.FC<PageProps> = (props) => {
 
     return (
         <div>
-            Time Page
+            Calendar
         </div>
     );
 };

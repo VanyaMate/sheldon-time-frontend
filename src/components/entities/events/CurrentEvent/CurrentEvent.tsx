@@ -26,7 +26,9 @@ const CurrentEvent: React.FC<CurrentEventProps> = (props) => {
             <footer>
                 <p className={ 'text-secondary' }>
                     <span>Осталось: </span>
-                    <Timer time={ timeStart + duration }/>
+                    <span className={ 'text-foreground' }>
+                        <Timer time={ timeStart + duration }/>
+                    </span>
                 </p>
             </footer>
             <header>

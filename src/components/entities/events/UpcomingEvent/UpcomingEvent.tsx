@@ -26,7 +26,9 @@ const UpcomingEvent: React.FC<UpcomingEventProps> = (props) => {
             <footer>
                 <p className={ 'text-secondary' }>
                     <span>Начало через: </span>
-                    <Timer time={ timeStart }/>
+                    <span className={ 'text-foreground' }>
+                        <Timer time={ timeStart }/>
+                    </span>
                 </p>
                 <p className={ 'text-secondary' }>
                     <span>Длительность: </span>

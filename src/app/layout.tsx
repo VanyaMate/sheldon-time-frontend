@@ -9,8 +9,9 @@ import { cn } from '@/lib/utils';
 
 
 export const metadata: Metadata = {
-    title      : 'Sheldon Time',
+    title      : 'Sheldon',
     description: 'Приложения для управления временем',
+    manifest   : '/manifest.json',
 };
 
 export type RootLayoutProps = {

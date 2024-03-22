@@ -3,11 +3,10 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { boxStyles } from '@/styles/boxes/box';
-import { format } from 'date-fns';
-import Timer from '../../time/Timer/Timer';
+import Timer from '@/components/entities/time/Timer/Timer';
 
 
-export type UpcomingEventProps =
+export type CurrentEventProps =
     {
         title: string;
         description: string;
@@ -17,22 +16,17 @@ export type UpcomingEventProps =
     }
     & React.ComponentPropsWithoutRef<'div'>;
 
-const UpcomingEvent: React.FC<UpcomingEventProps> = (props) => {
+const CurrentEvent: React.FC<CurrentEventProps> = (props) => {
     const { title, description, timeStart, duration, extra, className, ...other } = props;
 
     return (
         <section { ...other }
-                 className={ cn(className, `flex flex-col gap-2 ${ boxStyles }`) }>
+                 className={ cn(className, `flex flex-col gap-2 border-primary ${ boxStyles }`) }
+        >
             <footer>
                 <p className={ 'text-secondary' }>
-                    <span>Начало через: </span>
-                    <Timer time={ timeStart }/>
-                </p>
-                <p className={ 'text-secondary' }>
-                    <span>Длительность: </span>
-                    <span className={ 'text-foreground' }>
-                        2 часа 30 минут
-                    </span>
+                    <span>Осталось: </span>
+                    <Timer time={ timeStart + duration }/>
                 </p>
             </footer>
             <header>
@@ -46,4 +40,4 @@ const UpcomingEvent: React.FC<UpcomingEventProps> = (props) => {
     );
 };
 
-export default React.memo(UpcomingEvent);
+export default React.memo(CurrentEvent);

@@ -1,1 +1,0 @@
-export const boxStyles = 'border rounded-xl p-2'

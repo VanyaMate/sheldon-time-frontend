@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { boxStyles } from '@/styles/boxes/box';
 import { format } from 'date-fns';
 import { ru } from 'date-fns/locale';
+import { cn } from '@/lib/utils';
 
 
 export type CurrentDateProps =
@@ -25,7 +25,8 @@ const CurrentDate: React.FC<CurrentDateProps> = (props) => {
     }, [ date ]);
 
     return (
-        <div className={ `flex flex-col gap-0.5 items-center ${ boxStyles }` }>
+        <div
+            className={ cn(className, `flex flex-col gap-0.5 items-center rounded-xl p-4`) }>
             <p className={ 'text-sm text-secondary font-bold' }>
                 { format(date, 'dd MMMM yyyy', { locale: ru }) }
             </p>
